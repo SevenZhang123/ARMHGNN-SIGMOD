@@ -1,0 +1,81 @@
+This is the source code for paper: Attention of Random walk and Metapath for Heterogeneous
+Graph Neural Network
+
+The code folder includes the source code. The data folder includes data.
+
+-----------------------------------------------------------------------------------------------------
+
+In hte code dolder:
+
+Parameter_settings: Perform some hyperparameter settings.
+
+ARMHGNN.py: The main program file.
+
+model.py: Defines our model.
+
+data_process.py: Performs some data pre-processing and training sample sampling.
+
+random_walk_beigh.py: Sampling Neighbor Nodes through Random Walkthrough.
+
+DeepWalk.py: Based on the network structure, use the deepwalk algorithm to generate the initial embedding of nodes
+
+computer_metapath.py: The construction of heterogeneous graphs and the definition of metapath extraction algorithms.
+
+metapath_neigh_seek.py: Extract metapath using computer_metapath.py.
+
+application.py: Including the setting of two downstream tasks and experimental methods.
+
+node_classification_model.py: Detailed process of downstream task node classification.
+
+node_clustering_model.py: Detailed process of downstream task node clustering.
+
+node_classification_statistic.py: Statistics of classification task results, calculating the total number of each category and the correct number of classifications separately.
+
+node_classification_visualization.py: Draw Figure 4 based on the statistical results of node_classification_statistic.py
+
+node_cluster_statistic.py: Node clustering task result statistics, including the total number of nodes in each category and the number of nodes successfully clustered together.
+
+node_cluster_visualization.py: Draw Figure 5 based on the statistical results of node_classification_statistic.py
+
+cluster_result_visualization.py: This file is used to generate Figure 6 and can be run directly.
+
+ablation_experiments_visualization.py: Generate code files for Figures 7 and 8 in the paper.
+
+-----------------------------------------------------------------------------------------------------
+
+how to use this project:
+*Step-1: Choose any compiler that can compile Python programs (vsCode is recommended)
+
+*Step-2: First, set the hyperparameters in the P.py file as needed.
+
+*Step-3: Second, Run the metapath_neigh_seek.py file to extract a fixed number of metapath instances for each node, which is convenient for later aggregation and use.
+
+*Step-4: Run the random walk file - random_walk_neigh.py to extract neighboring nodes for each node.
+
+*Step-5: Run the main program file - ARMHGNN.py Learn the embedding representation of nodes in heterogeneous graphs through our defined model. It should be noted that It is best to use a GPU with a memory of no less than 24GB.
+
+*Step-6: After obtaining the embedded representation of nodes, the application.py file can be used to test their performance in downstream tasks. Both downstream tasks are written in the application.py file, so when testing a downstream task, it is necessary to comment out another startup command.
+
+Note: Please ensure that all required packages have been installed before testing.
+
+-----------------------------------------------------------------------------------------------------
+
+The following four Python files are used to generate graphs of the experimental section in the paper,The specific implementation method is explained in the document:
+Figure 4: node_classification_visualization.py
+
+Figure 5: node_cluster_visualization.py
+
+Figure 6: cluster_result_visualization.py
+
+Figure 7, Figure 8: ablation_experiments_visualization.py
+
+-----------------------------------------------------------------------------------------------------
+
+Note: Part of the experimental code is referenced from HetGNN: Heterogeneous Graph Neural Network
+Zhang, Chuxu and Song, Dongjin and Huang, Chao and Swami, Ananthram and Chawla, Nitesh V.
+Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, KDD '19
+
+For more information, please contact me via email: zhangtaiyao@iie.ac.cn
+
+
+
